@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSPractice</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+<p>Enter the first Number.</p>
+first Number: <input type="text" id="num1"/> <br/>
+<input type="button" onclick="validate()" value="Submit"> <br/> <br/> <br/>
+second Number: <input type="text" id="num2"/><br/>
+<input type="button" onclick="validaten2()" value="Submit">
+
+<p>Select one of the following operations : </p>
+<select id="option">
+    <option value="+" selected="selected">Add</option>
+    <option value="-">Subtract</option>
+    <option value="*">Multiply</option>
+    <option value="/">Divide</option>
+</select>
+<input type="button" onclick="calculate()" value="Calculate">
+
+
+<div id="answer"></div>
+
+<script>
+function validaten1()
+{
+    let n1 = document.getElementById("num1").value 
+    if (n1=="")
+    {
+        alert("Invalid numbers or Numbers Have not been entered.")
+    }
+}
+function validaten2()
+{
+    let n2 = document.getElementById("num2").value 
+    if (n2=="")
+    {
+        alert("Invalid numbers or Numbers Have not been entered.")
+    }
+}
+
+function calculate()
+{
+    let n1 = document.getElementById("num1").value 
+    let n2 = document.getElementById("num2").value 
+
+    let op = document.getElementById("option").value
+    let result = document.getElementById("answer")
+
+/* I was doing this mistake, but now I get it jo value attribute hai wo javascript me get
+   getElementbyid().value me use hota hai which is important to understand */
+
+    if (op=="+")
+    {
+        alert(Number(n1)+Number(n2))        
+    }
+    else if (op=="-")
+    {
+        alert(Number(n1)-Number(n2))
+    }
+    else if(op=="*")
+    {
+        alert(Number(n1)*Number(n2))
+    }
+    else
+    {
+        alert(Number(n1)/Number(n2))
+    }    
+
+
+}
+</script>
+
+</body>
+
+</html>
